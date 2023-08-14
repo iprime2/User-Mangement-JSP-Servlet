@@ -54,7 +54,7 @@ public class UserDao {
 	
 	// insert user
 	
-	public void inserUser(User user) {
+	public void insertUser(User user) {
 		System.out.println("INSERT_USER_SQL");
 		try (Connection connection = getConnection();
 				PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
@@ -64,8 +64,7 @@ public class UserDao {
 			System.out.println(preparedStatement);
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
-//			printSQLException(e);
-			e.printStackTrace();
+			printSQLException(e);
 		}
 	}
 	
